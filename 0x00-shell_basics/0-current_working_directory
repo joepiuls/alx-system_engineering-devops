@@ -1,3 +1,2 @@
-import os
-directory   = getcwd()
-print("current directory", directory)
+#!/bin/bash
+echo "current working directory: $(pwd)"
