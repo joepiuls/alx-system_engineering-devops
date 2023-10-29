@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Displays "Best School" but displays "Hi" on the 9th iteration
+
+index=0
+
+while [ $index -lt 10 ]
+do
+  if [ $index -eq 4 ]
+  then
+    echo "bad luck"
+  fi
+ if [ $index -eq 8 ]
+ then
+    echo "good luck"
+ fi
+  echo "Best School"
+  ((index++))
+done
