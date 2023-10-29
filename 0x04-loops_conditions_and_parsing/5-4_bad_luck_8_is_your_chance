@@ -5,11 +5,11 @@ index=0
 
 while [ $index -lt 10 ]
 do
-  if [ $index -eq 4 ]
+  if [ $index -eq 3 ]
   then
     echo "bad luck"
   fi
- if [ $index -eq 8 ]
+ if [ $index -eq 7 ]
  then
     echo "good luck"
  fi
