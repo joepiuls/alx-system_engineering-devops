@@ -1,18 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Check if the script is run as root
-if [ "$EUID" -ne 0 ]; then
-  echo "Please run this script as root (sudo)."
-  exit 1
-fi
+# changes the following domain resolve ips
+#   localhost form 127.0.0.1 to 127.0.0.2
+#   facebook.com from 157.240.11.35 to 8.8.8.8
 
-# Define the IP addresses
-localhost_ip="127.0.0.2"
-facebook_ip="8.8.8.8"
-
-# Update /etc/hosts file
-echo -e "$localhost_ip\tlocalhost" >> /etc/hosts
-echo -e "$facebook_ip\tfacebook.com" >> /etc/hosts
-
-echo "Configuration completed. Check /etc/hosts for changes."
-
+cp /etc/hosts ~/hosts.new
+echo "127.0.0.1   localhost" > ~/hosts.new
+echo "8.8.8.8     facebook.com" >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts/ 
